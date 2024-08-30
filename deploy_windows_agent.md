@@ -10,8 +10,3 @@ Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-
 ```powershell
 NET START WazuhSvc
 ```
-
-#One-liner
-```powershell
-Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-1.msi -OutFile $env:TEMP\wazuh-agent.msi; msiexec.exe /i $env:TEMP\wazuh-agent.msi /q WAZUH_MANAGER='192.168.1.20' WAZUH_REGISTRATION_SERVER='192.168.1.20'; net start WazuhSvc
-```
